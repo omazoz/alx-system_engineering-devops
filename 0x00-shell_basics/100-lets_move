@@ -1,0 +1,2 @@
+#!/bin/bash
+mv -i [A-Z]* /tmp/u/
