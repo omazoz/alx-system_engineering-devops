@@ -1,2 +1,6 @@
 #!/bin/bash
+<<<<<<< HEAD
 tail -n +2 | cut -f -1 | sort -k 1 | uniq -c | sort -rnk 1 | head -n 11 | rev | cut -d ' ' -f -1 | rev
+=======
+sort -nr | head -n 11 
+>>>>>>> 0d908c0f1cdf8b58dbb577127a9a2b7a64853a92
