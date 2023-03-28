@@ -1,1 +1,1 @@
-all you will need about SHELL_BASICS
+## All you will need about SHELL_BASICS 🥰
