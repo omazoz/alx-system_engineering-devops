@@ -3,4 +3,4 @@
 # Setting  the server IP or hostname
 #server_ip="8.8.8.8"
 
-ssh -i ~/.ssh/school ubuntu@100.26.174.218
+ssh -i ~/.ssh/school ubuntu@$"100.26.174.218"
