@@ -1,1 +1,1 @@
-0x0B. SSH
+"waiting ..to fix the prob"
