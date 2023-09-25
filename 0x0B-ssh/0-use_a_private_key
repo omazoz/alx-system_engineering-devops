@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 # Setting  the server IP or hostname
 #server_ip="8.8.8.8"
