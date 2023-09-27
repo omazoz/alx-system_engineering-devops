@@ -1,5 +1,6 @@
 #!/usr/bin/env bash
-# run holbertonschool/265-0 docker container
+# author : Oumayma mazoz
+# run holbertonschool/265-0 docker
 
 echo "ServerName localhost" >> /etc/apache2.conf
 service apache2 start
