@@ -1,4 +1,5 @@
 #configuring your server with Puppet!
+#Author: Oumayma Mazoz
 # add stable version of nginx
 exec { 'add nginx stable repo':
   command => 'sudo add-apt-repository ppa:nginx/stable',
