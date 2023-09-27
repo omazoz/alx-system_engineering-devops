@@ -1,6 +1,6 @@
 # SSH configuration 
-Host  My server 100.26.174.218
-    HostName 100.26.174.218
+Host  My server 54.173.140.10
+    HostName 54.173.140.10
     User ubuntu
     IdentityFile ~/.ssh/school
     PasswordAuthentication no
