@@ -1,4 +1,5 @@
 # creates  file in /tmp
+#Author: Oumayma Mazoz
 
 file { 'school':
   ensure  => file,
