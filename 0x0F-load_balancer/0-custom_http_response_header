@@ -1,6 +1,5 @@
 #!/usr/bin/env bash
-#author: Oumayma mazoz
-#configure web-02 to be identical to web-01
+# #author: Oumayma mazoz : configure web-02 to be same to web-01
 
 sudo apt-get update
 sudo apt-get -y install nginx
