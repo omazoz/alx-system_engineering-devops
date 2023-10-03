@@ -1,0 +1,21 @@
+#!/usr/bin/env bash
+#author: Oumayma mazoz
+#configure web-02 to be identical to web-01
+
+sudo apt-get update
+sudo apt-get -y install nginx
+sudo ufw allow 'Nginx HTTP'
+sudo chmod -R 777 /var/www
+
+conf="/etc/nginx/sites-available/default"
+sudo sh -c "echo 'Hello World!' > /var/www/html/index.nginx-debian.html"
+sudo sed -i '/^}$/i \ \n\tlocation \/redirect_me {return 301 https:\/\/www.youtube.com\/watch?v=QH2-TGUlwu4;}' $conf
+sudo sed -i '/^}$/i \ \n\tlocation @404 {return 404 "Ceci n'\''est pas une page\\n";}' $conf
+sudo sed -i 's/=404/@404/g' $conf
+sudo sed -i "0,/location \/ {/s/location \/ {/&\n\t\tadd_header X-Served-By '$HOSTNAME';/" $conf
+if [ "$(pgrep -c nginx)" -le 0 ];
+then
+    sudo service nginx start
+else
+    sudo service nginx restart
+fi;

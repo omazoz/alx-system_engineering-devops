@@ -1,0 +1,18 @@
+#!/usr/bin/env bash
+#author: Oumayma mazoz
+#configures a new Ubuntu machine nginx
+sudo apt-get update
+sudo apt-get install software-properties-common -y
+sudo add-apt-repository ppa:vbernat/haproxy-2.4 -y
+sudo apt-get update
+sudo apt-get install haproxy=2.4.\* -y
+sudo echo "frontend web-front
+        bind *:80
+        default_backend web-backend
+
+backend web-backend
+        balance roundrobin
+        server web-01 54.173.140.10:80 check
+        server web-02 3.85.1.16:80 check
+" | sudo tee -a /etc/haproxy/haproxy.cfg
+sudo service haproxy restart
