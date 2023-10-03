@@ -1,6 +1,5 @@
 #!/usr/bin/env bash
-#author: Oumayma mazoz
-#configures a new Ubuntu machine nginx
+#author: Oumayma mazoz configures a new Ubuntu machine nginx
 sudo apt-get update
 sudo apt-get install software-properties-common -y
 sudo add-apt-repository ppa:vbernat/haproxy-2.4 -y
