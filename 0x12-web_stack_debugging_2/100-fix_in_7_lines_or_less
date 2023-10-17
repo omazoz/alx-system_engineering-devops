@@ -1,0 +1,17 @@
+#!/usr/bin/env bash
+
+nginx_conf="/etc/nginx/nginx.conf"
+default_conf="/etc/nginx/conf.d/default.conf"
+
+if [ -f "$nginx_conf" ]; then
+  sed -i 's/user  nginx;/user  nginx;/' "$nginx_conf"
+fi
+
+if [ -f "$default_conf" ]; then
+  sed -i 's/listen       80;/listen       8080;/g' "$default_conf"
+fi
+
+chown -R nginx:nginx /var/lib/nginx /var/log/nginx
+
+nginx
+
