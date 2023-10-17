@@ -1,0 +1,24 @@
+#!/usr/bin/env bash
+
+echo "Be patient, this might take a couple minutes.."
+apt-get update > /dev/null 2>&1
+apt-get install -y apache2 > /dev/null 2>&1
+
+echo -e "\nWait a little more.."
+sed -i "s/80/8080/g" /etc/apache2/sites-available/000-default.conf
+sed -i "s/80/8080/g" /etc/apache2/ports.conf
+service apache2 restart > /dev/null 2>&1
+rm -r /var/run/apache2/apache2.pid 
+
+sudo useradd nginx > /dev/null 2>&1
+sudo passwd -d nginx > /dev/null 2>&1
+echo -e "\nAlmost there.."
+apt-get install -y nginx > /dev/null 2>&1
+sed -i '1s/^/# /' /etc/nginx/nginx.conf
+
+sudo chmod 1777 /run
+printf "post-start exec /bin/sleep 0.1\n" | sudo tee /etc/init/nginx.override
+sudo chown -R nginx:nginx /var/log/nginx/
+
+service nginx restart > /dev/null 2>&1
+echo -e "\nAll done, start debugging!"
