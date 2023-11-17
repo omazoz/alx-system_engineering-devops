@@ -5,7 +5,7 @@ erver {
         index index.html index.htm index.nginx-debian.html;
         server_name _;
         location / {
-                add_header X-Served-By '353097-web-01';
+                add_header X-Served-By '381337-web-01';
                 try_files $uri $uri/ @404;
         }
         location /hbnb_static {
